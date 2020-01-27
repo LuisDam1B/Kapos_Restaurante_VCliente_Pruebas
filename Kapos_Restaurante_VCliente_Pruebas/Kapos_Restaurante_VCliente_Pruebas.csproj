@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\Converters.cs" />
     <Compile Include="Model\INotify.cs" />
     <Compile Include="Service\BDService.cs" />
     <Page Include="View\MainWindow.xaml">

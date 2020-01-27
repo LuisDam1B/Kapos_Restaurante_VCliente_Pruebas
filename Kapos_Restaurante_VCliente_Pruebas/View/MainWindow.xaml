@@ -19,15 +19,16 @@
 
             </StackPanel>
 
-            <ListView x:Name="listaPedidos_ListView" ItemsSource="{Binding listaPedidos.View}" SelectedItem="{Binding pedidoSeleccionado}">
+            <ListView x:Name="listaPedidos_ListView" ItemsSource="{Binding listaPedidos.View}" SelectedItem="{Binding pedidoSeleccionado}" Margin="10">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
                             <DockPanel>
-                                <StackPanel DockPanel.Dock="Right">
+                                <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center">
                                     <TextBlock Text="{Binding id}"/>
-                                    <TextBlock Text="{Binding CLIENTE.Nombre}"/>
+                                    <TextBlock Text="{Binding CLIENTE.nombre}"/>
                                 </StackPanel>
+                                <Image Source="/Assets/Arroz.jpg" Width="50" Height="50"/>
                             </DockPanel>
                     </WrapPanel>
                 </DataTemplate>
@@ -45,7 +46,7 @@
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="Gray" FontSize="22" VerticalAlignment="Bottom" />
                                                     <TextBlock Text="prueba" FontSize="22" Foreground="Green" FontWeight="Bold" FontStyle="Italic" Margin="10,0,0,0" VerticalAlignment="Bottom" />
-                                                    </StackPanel>
+                                                </StackPanel>
                                             </Expander.Header>
                                             <ItemsPresenter />
                                         </Expander>
