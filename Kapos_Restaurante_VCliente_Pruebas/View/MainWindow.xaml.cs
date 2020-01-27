@@ -31,6 +31,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listaPedidos_ListView.ItemsSource);
             PropertyGroupDescription groupDescription = new PropertyGroupDescription("cliente");
             view.GroupDescriptions.Add(groupDescription);
+            //prievb
             
         }
     }
