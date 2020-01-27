@@ -23,14 +23,12 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
-                        <TextBlock Text="Name: " />
-                        <TextBlock Text="{Binding id}" FontWeight="Bold" />
-                        <TextBlock Text=", " />
-                        <TextBlock Text="Age: " />
-                        <TextBlock Text="{Binding fecha_pedido}" FontWeight="Bold" />
-                        <TextBlock Text=" (" />
-                        <TextBlock x:Name="nomCliente_TextBlock" Text="{Binding CLIENTE.nombre}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
-                        <TextBlock Text=")" />
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Right">
+                                    <TextBlock Text="{Binding id}"/>
+                                    <TextBlock Text="{Binding CLIENTE.Nombre}"/>
+                                </StackPanel>
+                            </DockPanel>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
