@@ -29,7 +29,7 @@
                         <TextBlock Text="Age: " />
                         <TextBlock Text="{Binding fecha_pedido}" FontWeight="Bold" />
                         <TextBlock Text=" (" />
-                        <TextBlock Text="{Binding CLIENTE.nombre}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
+                        <TextBlock x:Name="nomCliente_TextBlock" Text="{Binding CLIENTE.nombre}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
                         <TextBlock Text=")" />
                     </WrapPanel>
                 </DataTemplate>
@@ -45,10 +45,9 @@
                                         <Expander IsExpanded="True">
                                             <Expander.Header>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Label Content="{Binding CLIENTE.nombre}" FontWeight="Bold" Foreground="Gray" FontSize="22" VerticalAlignment="Bottom" />
-                                                    <TextBlock Text="{Binding ItemCount}" FontSize="22" Foreground="Green" FontWeight="Bold" FontStyle="Italic" Margin="10,0,0,0" VerticalAlignment="Bottom" />
-                                                    
-                                                </StackPanel>
+                                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="Gray" FontSize="22" VerticalAlignment="Bottom" />
+                                                    <TextBlock Text="prueba" FontSize="22" Foreground="Green" FontWeight="Bold" FontStyle="Italic" Margin="10,0,0,0" VerticalAlignment="Bottom" />
+                                                    </StackPanel>
                                             </Expander.Header>
                                             <ItemsPresenter />
                                         </Expander>
