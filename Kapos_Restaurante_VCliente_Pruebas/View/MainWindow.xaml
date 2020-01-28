@@ -15,6 +15,7 @@
             Command="local:CustomCommands.Cancelar"
             Executed="CancelarCommand_Executed"
             CanExecute="CancelarCommand_CanExecute"/>
+        
     </Window.CommandBindings>
     
     <Grid>
@@ -26,7 +27,7 @@
             <StackPanel x:Name="Footer_StackPanel" DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Center" Margin="5">
 
                 <Button x:Name="confirmar_Button" Content="Añadir Elemento" Command="local:CustomCommands.Añadir"></Button>
-                <Button x:Name="cancelarSeleccion_Button" Content="Cancelar Selección"/>
+                <Button x:Name="cancelarSeleccion_Button" Content="Cancelar Selección" Command="local:CustomCommands.Cancelar"/>
 
             </StackPanel>
 
@@ -56,7 +57,7 @@
                                             <Expander.Header>
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="Gray" FontSize="22" VerticalAlignment="Bottom" />
-                                                    <TextBlock Text="prueba" FontSize="22" Foreground="Green" FontWeight="Bold" FontStyle="Italic" Margin="10,0,0,0" VerticalAlignment="Bottom" />
+                                                    <TextBlock Text="Categoria" FontSize="22" Foreground="Green" FontWeight="Bold" FontStyle="Italic" Margin="10,0,0,0" VerticalAlignment="Bottom" />
                                                 </StackPanel>
                                             </Expander.Header>
                                             <ItemsPresenter />

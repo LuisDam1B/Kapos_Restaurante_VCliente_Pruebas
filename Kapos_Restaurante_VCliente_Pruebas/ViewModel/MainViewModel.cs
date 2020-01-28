@@ -36,6 +36,11 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
             return (pedidoSeleccionado != null);
         }
 
+        public bool Cancelar_CanExecute()
+        {
+            return (pedidosSeleccionados != null);
+        }
+
 
     }
 }

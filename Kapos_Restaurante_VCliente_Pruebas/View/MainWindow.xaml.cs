@@ -56,10 +56,10 @@ namespace Kapos_Restaurante_VCliente_Pruebas
 
 
         }
-        private void CancelarCommand_CanExecuted(object sender, ExecutedRoutedEventArgs e)
+        private void CancelarCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
 
-
+            e.CanExecute = (this.DataContext as ViewModel.MainViewModel).Cancelar_CanExecute();
         }
 
 
