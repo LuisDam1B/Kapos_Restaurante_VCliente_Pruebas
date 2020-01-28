@@ -20,6 +20,9 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
 
         public PEDIDOS pedidoSeleccionado { get; set; }
 
+        //lista para ir añadiendo los elementos seleccionados.
+        public List<PEDIDO> pedidosSeleccionados { get; set; }
+
         public MainViewModel()
         {
             listaPedidos = new CollectionViewSource
@@ -28,6 +31,11 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
             };
         }
         
+        public bool Añadir_CanExecute()
+        {
+            return (pedidoSeleccionado != null);
+        }
+
 
     }
 }

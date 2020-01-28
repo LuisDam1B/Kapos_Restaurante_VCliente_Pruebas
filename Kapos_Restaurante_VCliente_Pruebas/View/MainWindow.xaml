@@ -3,9 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Kapos_Restaurante_VCliente_Pruebas"
+        xmlns:local="clr-namespace:Kapos_Restaurante_VCliente_Pruebas.Commands"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding 
+            Command="local:CustomCommands.Añadir"
+            Executed="AñadirCommand_Executed"
+            CanExecute="AñadirCommand_CanExecute"/>
+        <CommandBinding 
+            Command="local:CustomCommands.Cancelar"
+            Executed="CancelarCommand_Executed"
+            CanExecute="CancelarCommand_CanExecute"/>
+    </Window.CommandBindings>
+    
     <Grid>
         <DockPanel>
 
@@ -14,7 +25,7 @@
             </StackPanel>
             <StackPanel x:Name="Footer_StackPanel" DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Center" Margin="5">
 
-                <Button x:Name="confirmar_Button" Content="Añadir Elemento"></Button>
+                <Button x:Name="confirmar_Button" Content="Añadir Elemento" Command="local:CustomCommands.Añadir"></Button>
                 <Button x:Name="cancelarSeleccion_Button" Content="Cancelar Selección"/>
 
             </StackPanel>

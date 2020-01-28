@@ -1,4 +1,5 @@
 ﻿using Kapos_Restaurante_VCliente_Pruebas.ViewModel;
+using Kapos_Restaurante_VCliente_Pruebas.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,5 +35,33 @@ namespace Kapos_Restaurante_VCliente_Pruebas
             //prievb
             
         }
+
+        //Commads
+
+        private void AñadirCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (this.DataContext as ViewModel.MainViewModel).Añadir_CanExecute();
+
+        }
+
+        private void AñadirCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+           
+
+        }
+
+        private void CancelarCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+
+
+        }
+        private void CancelarCommand_CanExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+
+
+        }
+
+
     }
 }
