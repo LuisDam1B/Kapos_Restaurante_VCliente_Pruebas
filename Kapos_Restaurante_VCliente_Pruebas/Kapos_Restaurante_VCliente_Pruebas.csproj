@@ -66,7 +66,34 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CustomCommands.cs" />
     <Compile Include="Converters\Converters.cs" />
+    <Compile Include="Model\CATEGORIAS.cs">
+      <DependentUpon>KaposRestaurantBd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\COMANDAS.cs">
+      <DependentUpon>KaposRestaurantBd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ELEMENTOS.cs">
+      <DependentUpon>KaposRestaurantBd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FACTURA.cs">
+      <DependentUpon>KaposRestaurantBd.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\INotify.cs" />
+    <Compile Include="Model\KaposRestaurantBd.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KaposRestaurantBd.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KaposRestaurantBd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KaposRestaurantBd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KaposRestaurantBd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KaposRestaurantBd.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Service\BDService.cs" />
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -84,7 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\CLIENTES.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>KaposRestaurantBd.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -102,7 +129,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\PEDIDOS.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>KaposRestaurantBd.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -125,6 +152,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Model\KaposRestaurantBd.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KaposRestaurantBd.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\KaposRestaurantBd.edmx.diagram">
+      <DependentUpon>KaposRestaurantBd.edmx</DependentUpon>
+    </None>
     <None Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -139,6 +173,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Arroz.jpg" />
+    <Content Include="Model\KaposRestaurantBd.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KaposRestaurantBd.edmx</DependentUpon>
+      <LastGenOutput>KaposRestaurantBd.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\KaposRestaurantBd.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KaposRestaurantBd.edmx</DependentUpon>
+      <LastGenOutput>KaposRestaurantBd.cs</LastGenOutput>
+    </Content>
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

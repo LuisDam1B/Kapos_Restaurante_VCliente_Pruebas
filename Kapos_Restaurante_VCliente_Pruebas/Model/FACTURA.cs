@@ -12,15 +12,13 @@ namespace Kapos_Restaurante_VCliente_Pruebas.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class PEDIDOS
+    public partial class FACTURA
     {
-        public int id { get; set; }
-        public Nullable<System.DateTime> fecha_pedido { get; set; }
-        public Nullable<int> numero_articulos { get; set; }
-        public Nullable<decimal> importe { get; set; }
-        public Nullable<int> cliente { get; set; }
-        public Nullable<int> enviado { get; set; }
+        public int IdComanda { get; set; }
+        public int IdElemento { get; set; }
+        public int CantidadElementos { get; set; }
     
-        public virtual CLIENTES CLIENTES { get; set; }
+        public virtual COMANDAS COMANDAS { get; set; }
+        public virtual ELEMENTOS ELEMENTOS { get; set; }
     }
 }
