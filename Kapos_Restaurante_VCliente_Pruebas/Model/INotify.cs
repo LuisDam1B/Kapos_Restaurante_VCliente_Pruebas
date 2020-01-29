@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Kapos_Restaurante_VCliente_Pruebas.Model
 {
-    public partial class CLIENTE : INotifyPropertyChanged
+    public partial class CATEGORIA : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
     }
 
-    public partial class PEDIDO : INotifyPropertyChanged
+    public partial class ELEMENTOS : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
     }

@@ -30,7 +30,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas
             InitializeComponent();
 
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listaPedidos_ListView.ItemsSource);
-            PropertyGroupDescription groupDescription = new PropertyGroupDescription("cliente");
+            PropertyGroupDescription groupDescription = new PropertyGroupDescription("Categoria");
             view.GroupDescriptions.Add(groupDescription);
             //prievb
             
@@ -46,8 +46,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas
 
         private void AñadirCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-           
-
+            (this.DataContext as ViewModel.MainViewModel).Añadir_Executed();
         }
 
         private void CancelarCommand_Executed(object sender, ExecutedRoutedEventArgs e)

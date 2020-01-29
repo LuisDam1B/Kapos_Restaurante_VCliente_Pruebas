@@ -14,33 +14,39 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
     class MainViewModel : INotifyPropertyChanged
     {
         //Clase que sirve de modelo de datos para la vista MainWindows
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
-        public CollectionViewSource listaPedidos { get; set; }
+        public CollectionViewSource listaElementos { get; set; }
 
-        public PEDIDOS pedidoSeleccionado { get; set; }
+        public ELEMENTOS elementoSeleccionado { get; set; }
 
         //lista para ir añadiendo los elementos seleccionados.
-        public List<PEDIDO> pedidosSeleccionados { get; set; }
+        public List<ELEMENTOS> elementosSeleccionados { get; set; }
 
         public MainViewModel()
         {
-            listaPedidos = new CollectionViewSource
+            listaElementos = new CollectionViewSource
             {
-                Source = BDService.getPedidos()
+                Source = BDService.getElementos()
             };
         }
-        
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public bool Añadir_CanExecute()
         {
-            return (pedidoSeleccionado != null);
+            return (elementoSeleccionado != null);
         }
 
         public bool Cancelar_CanExecute()
         {
-            return (pedidosSeleccionados != null);
+            return (elementosSeleccionados != null);
         }
 
+        public void Añadir_Executed()
+        {
+            elementosSeleccionados.Add(elementoSeleccionado);
+        }
 
     }
 }
