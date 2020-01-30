@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kapos_Restaurante_VCliente_Pruebas.Commands"
         xmlns:local1="clr-namespace:Kapos_Restaurante_VCliente_Pruebas.Converters"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="500">
     <Window.CommandBindings>
         <CommandBinding 
             Command="local:CustomCommands.Añadir"
