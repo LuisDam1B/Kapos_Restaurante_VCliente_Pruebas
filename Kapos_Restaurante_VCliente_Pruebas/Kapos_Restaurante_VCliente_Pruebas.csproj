@@ -101,6 +101,10 @@
       <DependentUpon>KaposRestaurantBd.edmx</DependentUpon>
     </Compile>
     <Compile Include="Service\BDService.cs" />
+    <Compile Include="ViewModel\ValidarPedidoViewModel.cs" />
+    <Compile Include="View\ValidarPedido.xaml.cs">
+      <DependentUpon>ValidarPedido.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,6 +118,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ValidarPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\CLIENTES.cs">

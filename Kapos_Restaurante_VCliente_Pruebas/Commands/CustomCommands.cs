@@ -31,6 +31,17 @@ namespace Kapos_Restaurante_VCliente_Pruebas.Commands
                 }
             );
 
+        public static readonly RoutedUICommand Validar = new RoutedUICommand
+            (
+                "Validar",
+                "Validar",
+                typeof(CustomCommands),
+                new InputGestureCollection()
+                {
+                    new KeyGesture(Key.V, ModifierKeys.Alt)
+                }
+            );
+
 
     }
 }

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 
 namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
@@ -21,7 +22,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         public ELEMENTOS elementoSeleccionado { get; set; }
 
         //lista para ir añadiendo los elementos seleccionados.
-        public List<ELEMENTOS> elementosSeleccionados { get; set; }
+        public ObservableCollection<ELEMENTOS> elementosSeleccionados { get; set; }
 
         public MainViewModel()
         {
@@ -29,6 +30,8 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
             {
                 Source = BDService.getElementos()
             };
+
+            elementosSeleccionados = new ObservableCollection<ELEMENTOS>();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -43,9 +46,23 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
             return (elementosSeleccionados != null);
         }
 
-        public void Añadir_Executed()
+        public void Añadir_Executed(Object elemento)
         {
-            elementosSeleccionados.Add(elementoSeleccionado);
+           elementosSeleccionados.Add((ELEMENTOS)elemento);
+           
+        }
+
+        public bool Validar_CanExecute()
+        {
+            return (elementosSeleccionados != null);
+        }
+
+        public void Validar_Executed()
+        {
+            foreach (var item in elementosSeleccionados)
+            {
+                Console.WriteLine(item);
+            }
         }
 
     }

@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Kapos_Restaurante_VCliente_Pruebas;
+using Kapos_Restaurante_VCliente_Pruebas.View;
 
 namespace Kapos_Restaurante_VCliente_Pruebas
 {
@@ -46,7 +47,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas
 
         private void AñadirCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            (this.DataContext as ViewModel.MainViewModel).Añadir_Executed();
+            (this.DataContext as ViewModel.MainViewModel).Añadir_Executed(listaPedidos_ListView.SelectedItem);
         }
 
         private void CancelarCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -59,6 +60,20 @@ namespace Kapos_Restaurante_VCliente_Pruebas
         {
 
             e.CanExecute = (this.DataContext as ViewModel.MainViewModel).Cancelar_CanExecute();
+        }
+
+        private void ValidarCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            ValidarPedido validarPedidoView = new View.ValidarPedido((this.DataContext as ViewModel.MainViewModel).elementosSeleccionados);
+            validarPedidoView.Owner = this;
+            validarPedidoView.Show();
+
+        }
+
+        private void ValidarCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+
+            e.CanExecute = (this.DataContext as ViewModel.MainViewModel).Validar_CanExecute();
         }
 
 

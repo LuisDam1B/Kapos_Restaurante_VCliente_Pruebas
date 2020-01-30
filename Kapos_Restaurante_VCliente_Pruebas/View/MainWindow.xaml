@@ -16,6 +16,10 @@
             Command="local:CustomCommands.Cancelar"
             Executed="CancelarCommand_Executed"
             CanExecute="CancelarCommand_CanExecute"/>
+        <CommandBinding 
+            Command="local:CustomCommands.Validar"
+            Executed="ValidarCommand_Executed"
+            CanExecute="ValidarCommand_CanExecute"/>
         
     </Window.CommandBindings>
 
@@ -26,6 +30,11 @@
         <Style x:Name="textBlock_Style" x:Key="textBlock_Style" TargetType="TextBlock">
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style x:Name="Button_Style" x:Key="Button_Style" TargetType="Button">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="40"/>
         </Style>
     
     </Window.Resources>
@@ -38,8 +47,9 @@
             </StackPanel>
             <StackPanel x:Name="Footer_StackPanel" DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Center" Margin="5">
 
-                <Button x:Name="confirmar_Button" Content="Añadir Elemento" Command="local:CustomCommands.Añadir"></Button>
-                <Button x:Name="cancelarSeleccion_Button" Content="Cancelar Selección" Command="local:CustomCommands.Cancelar"/>
+                <Button x:Name="confirmar_Button" Content="Añadir Elemento" Style="{StaticResource Button_Style}" Command="local:CustomCommands.Añadir"></Button>
+                <Button x:Name="cancelarSeleccion_Button" Content="Cancelar Selección" Style="{StaticResource Button_Style}" Command="local:CustomCommands.Cancelar"/>
+                <Button x:Name="validarSeleccion_Button" Content="Validar Elección" Style="{StaticResource Button_Style}" Command="local:CustomCommands.Validar"/>
 
             </StackPanel>
 
@@ -55,7 +65,7 @@
                                         <Run Text="€"/>
                                     </TextBlock>
                                 </StackPanel>
-                                <Image x:Name="ImagenElemento_Image" Source="{Binding ImagenElementoURL}" Width="60" Height="60"/>
+                                <Image x:Name="ImagenElemento_Image" Source="{Binding ImagenElementoURL}" Width="100" Height="100"/>
                             </DockPanel>
                     </WrapPanel>
                 </DataTemplate>
@@ -71,7 +81,7 @@
                                         <Expander IsExpanded="False">
                                             <Expander.Header>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Image Source="{Binding Path=Name, Converter={StaticResource conversorIdImageUrl}}" VerticalAlignment="Bottom" Width="40" Height="40"/>
+                                                    <Image Source="{Binding Path=Name, Converter={StaticResource conversorIdImageUrl}}" VerticalAlignment="Bottom" Width="100" Height="100"/>
                                                     <TextBlock Text="{Binding Path=Name,Converter={StaticResource conversorIdNombre}}" FontSize="22" Foreground="Green" FontWeight="Bold" FontStyle="Italic" Margin="10,0,0,0" VerticalAlignment="Bottom" />
                                                 </StackPanel>
                                             </Expander.Header>
