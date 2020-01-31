@@ -13,19 +13,19 @@
                 <TextBlock/>
             </StackPanel>
 
-            <DataGrid ItemsSource="{Binding listaElementosPedidos}" AutoGenerateColumns="False">
+            <DataGrid ItemsSource="{Binding listaElementosPedidos}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Width="*" Header="Elemento">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding ImagenElementoURL}" Height="60" Width="60"/>
+                                <Image Source="{Binding ImagenElementoURL}" Height="60" Width="60" HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTemplateColumn Width="*" Header="Precio">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock>
+                                <TextBlock HorizontalAlignment="Center" FontSize="16" FontWeight="Bold">
                                 <Run Text="{Binding Precio}"></Run>
                                 <Run Text=" €"></Run>
                                 </TextBlock>
