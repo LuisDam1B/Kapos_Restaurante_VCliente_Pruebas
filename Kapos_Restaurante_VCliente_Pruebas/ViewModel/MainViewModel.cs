@@ -24,6 +24,11 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         //lista para ir añadiendo los elementos seleccionados.
         public ObservableCollection<ELEMENTOS> elementosSeleccionados { get; set; }
 
+        public int NumElementosSeleccionados
+        {
+            get { return elementosSeleccionados.Count; }
+        }
+
         public MainViewModel()
         {
             listaElementos = new CollectionViewSource
@@ -43,7 +48,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
 
         public bool Cancelar_CanExecute()
         {
-            return (elementosSeleccionados != null);
+            return (elementosSeleccionados.Count > 0);
         }
 
         public void Añadir_Executed(Object elemento)
@@ -54,7 +59,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
 
         public bool Validar_CanExecute()
         {
-            return (elementosSeleccionados != null);
+            return (elementosSeleccionados.Count > 0);
         }
 
         public void Validar_Executed()
@@ -64,6 +69,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
                 Console.WriteLine(item);
             }
         }
+
 
     }
 }
