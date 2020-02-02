@@ -6,6 +6,14 @@
         xmlns:local="clr-namespace:Kapos_Restaurante_VCliente_Pruebas.View"
         mc:Ignorable="d"
         Title="ValidarPedido" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Name="TextBlock_Style" TargetType="TextBlock" x:Key="TextBlock_Style">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <DockPanel>
             <StackPanel DockPanel.Dock="Right" Orientation="Vertical">
@@ -18,7 +26,10 @@
                     <DataGridTemplateColumn Width="*" Header="Elemento">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding ImagenElementoURL}" Height="60" Width="60" HorizontalAlignment="Center"/>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding NombreElemento}" HorizontalAlignment="Center" Style="{StaticResource TextBlock_Style}"/>
+                                    <TextBlock Text="{Binding Descripcion}" HorizontalAlignment="Center" Style="{StaticResource TextBlock_Style}"/>
+                                </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

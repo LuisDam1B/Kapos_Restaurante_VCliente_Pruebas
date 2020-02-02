@@ -12,7 +12,7 @@ using System.Windows.Data;
 
 namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
 {
-    class MainViewModel : INotifyPropertyChanged
+    class MainViewModel :INotifyPropertyChanged
     {
         //Clase que sirve de modelo de datos para la vista MainWindows
         
