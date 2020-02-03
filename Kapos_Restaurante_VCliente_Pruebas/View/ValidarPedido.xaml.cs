@@ -27,5 +27,10 @@ namespace Kapos_Restaurante_VCliente_Pruebas.View
             this.DataContext = new ValidarPedidoViewModel(listaElementos);
             InitializeComponent();
         }
+
+        private void CloseCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

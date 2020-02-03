@@ -15,7 +15,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
     class MainViewModel :INotifyPropertyChanged
     {
         //Clase que sirve de modelo de datos para la vista MainWindows
-        
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public CollectionViewSource listaElementos { get; set; }
 
@@ -39,7 +39,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
             elementosSeleccionados = new ObservableCollection<ELEMENTOS>();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+       
 
         public bool Añadir_CanExecute()
         {

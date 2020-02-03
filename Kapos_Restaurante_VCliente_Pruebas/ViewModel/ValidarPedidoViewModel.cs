@@ -19,5 +19,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         {
             listaElementosPedidos = (ObservableCollection<ELEMENTOS>)objeto;
         }
+
+
     }
 }

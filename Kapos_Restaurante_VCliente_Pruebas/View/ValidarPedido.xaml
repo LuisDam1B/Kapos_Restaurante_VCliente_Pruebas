@@ -12,13 +12,26 @@
             <Setter Property="FontWeight" Value="Bold"/>
 
         </Style>
+
+        <Style x:Name="Button_Style" x:Key="Button_Style" TargetType="Button">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
     </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="CloseCommand_Executed"/>
+    </Window.CommandBindings>
     
     <Grid>
         <DockPanel>
             <StackPanel DockPanel.Dock="Right" Orientation="Vertical">
                 <Label Content="Resumen de pedido"/>
                 <TextBlock/>
+
+                <Button Content="Confirmar Pedido" Style="{StaticResource Button_Style}"></Button>
+                <Button Content="Añadir mas Elementos" Style="{StaticResource Button_Style}" Command="ApplicationCommands.Close"></Button>
             </StackPanel>
 
             <DataGrid ItemsSource="{Binding listaElementosPedidos}" AutoGenerateColumns="False" CanUserAddRows="False">
