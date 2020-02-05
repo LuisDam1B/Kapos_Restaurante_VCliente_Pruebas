@@ -47,7 +47,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas
 
         private void AñadirCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            (this.DataContext as ViewModel.MainViewModel).Añadir_Executed(listaPedidos_ListView.SelectedItem);
+            (this.DataContext as ViewModel.MainViewModel).Añadir_Executed();
         }
 
         private void CancelarCommand_Executed(object sender, ExecutedRoutedEventArgs e)

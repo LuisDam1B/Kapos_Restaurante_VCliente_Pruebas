@@ -39,10 +39,7 @@
                     <DataGridTemplateColumn Width="*" Header="Elemento">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding NombreElemento}" HorizontalAlignment="Center" Style="{StaticResource TextBlock_Style}"/>
-                                    <TextBlock Text="{Binding Descripcion}" HorizontalAlignment="Center" Style="{StaticResource TextBlock_Style}"/>
-                                </StackPanel>
+                                <TextBlock Text="{Binding NombreElemento}" HorizontalAlignment="Center" Style="{StaticResource TextBlock_Style}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -56,7 +53,13 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-
+                    <DataGridTemplateColumn Width="*" Header="Cantidad">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ComandaPedidoActual.CantidadElementos}" HorizontalAlignment="Center" Style="{StaticResource TextBlock_Style}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>

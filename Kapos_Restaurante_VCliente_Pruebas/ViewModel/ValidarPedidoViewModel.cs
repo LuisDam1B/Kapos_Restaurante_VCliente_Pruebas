@@ -14,6 +14,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<ELEMENTOS> listaElementosPedidos { get; set; }
+        public int CantidadElementoPedido { get; set; }
 
         public ValidarPedidoViewModel(Object objeto)
         {
