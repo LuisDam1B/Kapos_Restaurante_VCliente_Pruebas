@@ -20,6 +20,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         public CollectionViewSource listaElementos { get; set; }
 
         public ELEMENTOS elementoSeleccionado { get; set; }
+        
 
         //lista para ir añadiendo los elementos seleccionados.
         public ObservableCollection<ELEMENTOS> elementosSeleccionados { get; set; }
@@ -53,6 +54,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
 
         public void Añadir_Executed(Object elemento)
         {
+           
            elementosSeleccionados.Add((ELEMENTOS)elemento);
            
         }
