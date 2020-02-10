@@ -72,6 +72,11 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
             }
         }
 
+        public void abrirManualUsuario()
+        {
+            System.Diagnostics.Process.Start(System.IO.Directory.GetCurrentDirectory().ToString() /*+ "\\NombreManual.chm"*/);
+        }
+
 
     }
 }

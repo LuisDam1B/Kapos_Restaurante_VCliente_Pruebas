@@ -27,6 +27,11 @@
     <Grid>
         <DockPanel>
             <StackPanel DockPanel.Dock="Right" Orientation="Vertical">
+                <Button x:Name="HelpValidacionButton" HorizontalAlignment="Right" Margin="0,10,10,0" Click="HelpValidacionButton_Click">
+                    <Image Source="/Assets/help.ico" Width="20" Height="20">
+                        
+                    </Image>
+                </Button>
                 <Label Content="Resumen de pedido" FontSize="18" FontWeight="Bold"/>
                 
                 <TextBlock HorizontalAlignment="Center">

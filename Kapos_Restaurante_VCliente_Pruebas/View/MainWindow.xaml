@@ -42,11 +42,14 @@
     <Grid>
         <DockPanel x:Name="ContenedorPPL_DockPanel">
 
-            <StackPanel x:Name="Header_StackPanel" DockPanel.Dock="Top" Orientation="Horizontal">
+            <DockPanel x:Name="Header_StackPanel" DockPanel.Dock="Top" >
+                <Button x:Name="HelpButton" DockPanel.Dock="Right" Margin="10" Click="HelpButton_Click">
+                    <Image Source="/Assets/help.ico" Width="20" Height="20">
+                        
+                    </Image>
+                </Button>
                 <TextBlock x:Name="titulo_TextBox" Text="Seleccionar Elementos" Margin="10" FontSize="15" FontWeight="Bold"/>
-
-
-            </StackPanel>
+            </DockPanel>
             <StackPanel x:Name="Footer_StackPanel" DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Top" Margin="5,178,5,0">
 
                 <Label Content="Elementos Seleccionados: " VerticalAlignment="Center" HorizontalAlignment="Left"/>

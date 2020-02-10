@@ -38,7 +38,10 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
             return precio;
         }
 
-
+        public void abrirValidacionManualUsuario()
+        {
+            System.Diagnostics.Process.Start(System.IO.Directory.GetCurrentDirectory().ToString() /*+ "\\NombreManual.chm"*/);
+        }
 
     }
 }

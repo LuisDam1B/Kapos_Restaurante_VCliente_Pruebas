@@ -32,5 +32,10 @@ namespace Kapos_Restaurante_VCliente_Pruebas.View
         {
             this.Close();
         }
+
+        private void HelpValidacionButton_Click(object sender, RoutedEventArgs e)
+        {
+            (this.DataContext as ValidarPedidoViewModel).abrirValidacionManualUsuario();
+        }
     }
 }
