@@ -76,6 +76,9 @@ namespace Kapos_Restaurante_VCliente_Pruebas
             e.CanExecute = (this.DataContext as ViewModel.MainViewModel).Validar_CanExecute();
         }
 
-
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            (this.DataContext as MainViewModel).abrirManualUsuario();
+        }
     }
 }
