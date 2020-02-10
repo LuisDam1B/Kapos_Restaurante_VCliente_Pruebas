@@ -13,7 +13,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return BDService.getUrlImagen((int)value);
+            return BDService.GetUrlImagen((int)value);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -26,7 +26,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return BDService.getNombre((int)value);
+            return BDService.GetNombre((int)value);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

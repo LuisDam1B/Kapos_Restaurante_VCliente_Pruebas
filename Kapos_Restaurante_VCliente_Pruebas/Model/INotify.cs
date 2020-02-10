@@ -16,4 +16,13 @@ namespace Kapos_Restaurante_VCliente_Pruebas.Model
     {
         public event PropertyChangedEventHandler PropertyChanged;
     }
+
+    public partial class FACTURA : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+    }
+    public partial class COMANDA : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+    }
 }

@@ -30,7 +30,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas
             this.DataContext = new MainViewModel();
             InitializeComponent();
 
-            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listaPedidos_ListView.ItemsSource);
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView((this.DataContext as ViewModel.MainViewModel).ListaElementos.Source);
             PropertyGroupDescription groupDescription = new PropertyGroupDescription("Categoria");
             view.GroupDescriptions.Add(groupDescription);
             //prievb
@@ -47,7 +47,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas
 
         private void AñadirCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            (this.DataContext as ViewModel.MainViewModel).Añadir_Executed(listaPedidos_ListView.SelectedItem);
+            (this.DataContext as ViewModel.MainViewModel).Añadir_Executed();
         }
 
         private void CancelarCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -64,7 +64,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas
 
         private void ValidarCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            ValidarPedido validarPedidoView = new View.ValidarPedido((this.DataContext as ViewModel.MainViewModel).elementosSeleccionados);
+            ValidarPedido validarPedidoView = new View.ValidarPedido((this.DataContext as ViewModel.MainViewModel).ElementosSeleccionados);
             validarPedidoView.Owner = this;
             validarPedidoView.Show();
 
