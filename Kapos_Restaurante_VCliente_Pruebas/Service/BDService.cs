@@ -21,27 +21,27 @@ namespace Kapos_Restaurante_VCliente_Pruebas.Service
 
         }
 
-        public static ObservableCollection<CATEGORIAS> getCategorias()
+        public static ObservableCollection<CATEGORIAS> GetCategorias()
         {
             return _contexto.CATEGORIAS.Local;
         }
 
-        public static ObservableCollection<ELEMENTOS> getElementos()
+        public static ObservableCollection<ELEMENTOS> GetElementos()
         {
             return _contexto.ELEMENTOS.Local;
         }
 
-        public static string getUrlImagen(int id)
+        public static string GetUrlImagen(int id)
         {
             var consulta = from n in _contexto.CATEGORIAS
                            where n.IdCategoria == id
                            select n.ImagenCategoriaURL;
 
 
-            return consulta.First();     
+            return consulta.First();
         }
 
-        public static string getNombre(int id)
+        public static string GetNombre(int id)
         {
             var consulta = from n in _contexto.CATEGORIAS
                            where n.IdCategoria == id
@@ -57,17 +57,24 @@ namespace Kapos_Restaurante_VCliente_Pruebas.Service
             return _contexto.SaveChanges();
         }
 
+        public static int AddComanda(COMANDAS item)
+        {
+            _contexto.COMANDAS.Add(item);
+            return _contexto.SaveChanges();
+        }
+
+
 
         //ESTE NO ESTÁ TERMINADO
-        public static int ActualizarCantidadElementos(int idElemento)
+        public static FACTURA ActualizarCantidadElementos(int idElemento, int idFactura)
         {
             var consulta = from f in _contexto.FACTURA
-                           where f.IdElemento == idElemento
-                           select f.CantidadElementos;
+                           where f.IdElemento == idElemento && f.IdComanda == idFactura
+                           select f;
 
-            int cantidad = consulta.First();
+            FACTURA factura = consulta.First();
 
-            return _contexto.SaveChanges();
+            return factura;
         }
 
 

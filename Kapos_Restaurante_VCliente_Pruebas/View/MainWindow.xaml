@@ -50,14 +50,14 @@
             <StackPanel x:Name="Footer_StackPanel" DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Top" Margin="5,178,5,0">
 
                 <Label Content="Elementos Seleccionados: " VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <TextBlock Text="{Binding elementosSeleccionados.Count}" FontSize="20" FontWeight="Bold" Foreground="Green" Margin="0,0,0,15" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding TotalElementosSeleccionados, UpdateSourceTrigger=PropertyChanged}" FontSize="20" FontWeight="Bold" Foreground="Green" Margin="0,0,0,15" HorizontalAlignment="Center"/>
                 <Button x:Name="confirmar_Button" Content="Añadir Elemento" Style="{StaticResource Button_Style}" Command="local:CustomCommands.Añadir"></Button>
                 <Button x:Name="cancelarSeleccion_Button" Content="Cancelar Selección" Style="{StaticResource Button_Style}" Command="local:CustomCommands.Cancelar"/>
                 <Button x:Name="validarSeleccion_Button" Content="Validar Elección" Style="{StaticResource Button_Style}" Command="local:CustomCommands.Validar"/>
 
             </StackPanel>
 
-            <ListView x:Name="listaPedidos_ListView" ItemsSource="{Binding listaElementos.View}" SelectedItem="{Binding ElementoSeleccionado}" Margin="10">
+            <ListView x:Name="listaPedidos_ListView" ItemsSource="{Binding ListaElementos.Source}" SelectedItem="{Binding ElementoSeleccionado}" Margin="10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <WrapPanel>
