@@ -16,11 +16,33 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         public ObservableCollection<ELEMENTOS> ListaElementosPedidos { get; set; }
         public int CantidadElementoPedido { get; set; }
 
+        public double PrecioTotal {
+
+            get { return CalcularPrecio(); }
+            
+        }
+
         public ValidarPedidoViewModel(Object objeto)
         {
             ListaElementosPedidos = (ObservableCollection<ELEMENTOS>)objeto;
         }
 
+        public double CalcularPrecio()
+        {
+            double precio = 0;
+
+            foreach (var elemeto in listaElementosPedidos)
+            {
+                precio += elemeto.Precio;
+            }
+
+            return precio;
+        }
+
+        public void abrirValidacionManualUsuario()
+        {
+            System.Diagnostics.Process.Start(System.IO.Directory.GetCurrentDirectory().ToString() /*+ "\\NombreManual.chm"*/);
+        }
 
     }
 }

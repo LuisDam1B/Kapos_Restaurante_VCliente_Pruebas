@@ -19,9 +19,11 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
 
         public CollectionViewSource ListaElementos { get; set; }
 
+
         public ELEMENTOS ElementoSeleccionado { get; set; }
 
         public int TotalElementosSeleccionados { get; set; }
+
 
         //lista para ir añadiendo los elementos seleccionados.
         public ObservableCollection<ELEMENTOS> ElementosSeleccionados { get; set; }
@@ -67,6 +69,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
 
         public void Añadir_Executed()
         {
+
             if (ElementosSeleccionados.Count > 0)
             {
                 if (ElementosSeleccionados.Contains(ElementoSeleccionado))
@@ -113,6 +116,11 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
             {
 
             }
+        }
+
+        public void abrirManualUsuario()
+        {
+            System.Diagnostics.Process.Start(System.IO.Directory.GetCurrentDirectory().ToString() /*+ "\\NombreManual.chm"*/);
         }
 
 
