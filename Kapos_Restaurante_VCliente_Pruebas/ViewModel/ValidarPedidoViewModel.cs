@@ -31,7 +31,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         {
             double precio = 0;
 
-            foreach (var elemeto in listaElementosPedidos)
+            foreach (var elemeto in ListaElementosPedidos)
             {
                 precio += elemeto.Precio;
             }

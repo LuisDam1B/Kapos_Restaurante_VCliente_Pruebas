@@ -12,12 +12,6 @@
             <Setter Property="FontWeight" Value="Bold"/>
 
         </Style>
-
-        <Style x:Name="Button_Style" x:Key="Button_Style" TargetType="Button">
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Margin" Value="10"/>
-            <Setter Property="Height" Value="40"/>
-        </Style>
     </Window.Resources>
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close"
@@ -43,8 +37,8 @@
                     <Run Text="{Binding PrecioTotal * 4}"/>
                 </TextBlock>
 
-                <Button Content="Confirmar Pedido" Style="{StaticResource Button_Style}"></Button>
-                <Button Content="Añadir mas Elementos" Style="{StaticResource Button_Style}" Command="ApplicationCommands.Close"></Button>
+                <Button Content="Confirmar Pedido" FontSize="12" Margin="10" Height="40"></Button>
+                <Button Content="Añadir mas Elementos" FontSize="12" Margin="10" Height="40" Command="ApplicationCommands.Close"></Button>
             </StackPanel>
 
             <DataGrid ItemsSource="{Binding listaElementosPedidos}" AutoGenerateColumns="False" CanUserAddRows="False">
