@@ -53,7 +53,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas
         private void CancelarCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
-
+            this.Close();
 
         }
         private void CancelarCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)

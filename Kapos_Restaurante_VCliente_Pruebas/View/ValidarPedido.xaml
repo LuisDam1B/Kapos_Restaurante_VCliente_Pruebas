@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kapos_Restaurante_VCliente_Pruebas.View"
+        xmlns:local1="clr-namespace:Kapos_Restaurante_VCliente_Pruebas.Converters"
         mc:Ignorable="d"
         Title="ValidarPedido" Height="450" Width="800">
     <Window.Resources>
+
+        <local1:ConvertIdToImage x:Key="ConvertPrecioToPrecioIva"></local1:ConvertIdToImage>
+
         <Style x:Name="TextBlock_Style" TargetType="TextBlock" x:Key="TextBlock_Style">
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Bold"/>
@@ -34,7 +38,7 @@
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center">
                     <Run Text="Precio Total con IVA: "/>
-                    <Run Text="{Binding PrecioTotal * 4}"/>
+                    <Run Text="{Binding PrecioTotal, Converter={StaticResource ConvertPrecioToPrecioIva}}"/>
                 </TextBlock>
 
                 <Button Content="Confirmar Pedido" FontSize="12" Margin="10" Height="40"></Button>

@@ -82,5 +82,16 @@ namespace Kapos_Restaurante_VCliente_Pruebas.Service
         {
             return _contexto.SaveChanges();
         }
+
+        public static int ObtenerNumElementos(int IdElemento)
+        {
+            var consulta = from f in _contexto.FACTURA
+                           where f.IdElemento == IdElemento
+                           select f;
+
+            FACTURA factura = consulta.First();
+
+            return factura.CantidadElementos;
+        }
     }
 }

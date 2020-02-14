@@ -1,4 +1,5 @@
 ﻿using Kapos_Restaurante_VCliente_Pruebas.Model;
+using Kapos_Restaurante_VCliente_Pruebas.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,9 +32,16 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         {
             double precio = 0;
 
+
+            foreach (ELEMENTOS elemento in ListaElementosPedidos)
+
             foreach (var elemeto in ListaElementosPedidos)
+
             {
-                precio += elemeto.Precio;
+                
+                int numElementos = 0;
+                numElementos = BDService.ObtenerNumElementos(elemento.IdElemento);
+                precio += numElementos * elemento.Precio;
             }
 
             return precio;
