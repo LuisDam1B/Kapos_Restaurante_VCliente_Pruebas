@@ -32,7 +32,11 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         {
             double precio = 0;
 
+
             foreach (ELEMENTOS elemento in ListaElementosPedidos)
+
+            foreach (var elemeto in ListaElementosPedidos)
+
             {
                 
                 int numElementos = 0;
