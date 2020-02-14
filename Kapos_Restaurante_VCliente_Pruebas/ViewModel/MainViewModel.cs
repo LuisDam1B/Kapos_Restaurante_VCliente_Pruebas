@@ -53,6 +53,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
             TotalElementosSeleccionados = 0;
 
             ElementosSeleccionados = new ObservableCollection<ELEMENTOS>();
+           
         }
 
 
@@ -78,6 +79,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
                     ComandaPedidoActual.CantidadElementos++;
                     BDService.ActualizarBbdd();
                     repetido = true;
+                    
                 }
                 else
                 {
@@ -114,7 +116,7 @@ namespace Kapos_Restaurante_VCliente_Pruebas.ViewModel
         {
             foreach (var item in ElementosSeleccionados)
             {
-
+                
             }
         }
 
